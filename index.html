@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>نموذج الاستشارات القانونية</title>
+  <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    <h2>نموذج الاستشارات</h2>
+    <p class="intro">
+      مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> للمحاماة والإستشارات القانونية.
+      <br>
+      <strong>لطلب استشارة؛ يرجى تعبئة البيانات التالية بدقة لنتمكن من مساعدتكم في أقرب وقت ممكن. جميع المعلومات التي تقدمها تعامل بسرية تامة.</strong>
+    </p>
+    <form action="https://formsubmit.co/info.mahmoud.sharaby@gmail.com" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label><i data-lucide="user"></i> الاسم الثلاثي</label>
+        <input type="text" name="الاسم" required />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="mail"></i> البريد الإلكتروني</label>
+        <input type="email" name="البريد الإلكتروني" required />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="phone"></i> رقم الموبايل</label>
+        <input type="tel" name="رقم الموبايل" required />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="map-pin"></i> المدينة/المنطقة</label>
+        <input type="text" name="المدينة/المنطقة" required />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="folder-search"></i> حدد نوع القضية <a href="https://telegra.ph/lawsap-04-24" target="_blank">[للمساعدة]</a></label>
+        <select name="نوع القضية" required>
+          <option disabled selected>اختر نوع القضية</option>
+          <option>القضايا المدنية والتجارية</option>
+          <option>القضايا الجنائية</option>
+          <option>قضايا الأحوال الشخصية</option>
+          <option>القضايا الإدارية</option>
+          <option>قضايا العمل</option>
+          <option>قضايا الضرائب والجمارك</option>
+          <option>قضايا الاستثمار</option>
+          <option>قضايا دولية</option>
+          <option>استشارات قانونية عامة</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="file-text"></i> عنوان موجز لقضيتك/سؤالك</label>
+        <input type="text" name="عنوان موجز" required />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="align-left"></i> موضوع الاستشارة</label>
+        <textarea name="موضوع الاستشارة" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="file-up"></i> مستندات ذات صلة (اختياري)</label>
+        <input type="file" name="مستندات" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="target"></i> ما النتيجة التي ترغب في تحقيقها؟</label>
+        <input type="text" name="النتيجة المطلوبة" />
+      </div>
+
+      <div class="form-group">
+        <label><i data-lucide="clock"></i> ما هي حالة قضيتك/استشارتك؟</label>
+        <select name="الحالة">
+          <option>طارئة</option>
+          <option>عاجلة</option>
+          <option>تحتمل الانتظار</option>
+        </select>
+      </div>
+
+      <button type="submit"><i data-lucide="send"></i> إرسال الاستشارة</button>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
