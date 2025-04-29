@@ -66,15 +66,18 @@
     button:hover {
       background-color: #159e4b;
     }
+    /* تعديل نمط رسالة التأكيد لتكون بعرض الشاشة كاملًا */
     .confirmation {
       background-color: #e6fff0;
       border: 1px solid #b2dfdb;
       color: #004d40;
       padding: 1.5rem;
-      border-radius: 12px;
       font-size: 1rem;
       line-height: 1.8;
-      margin-top: 2rem;
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -176,7 +179,8 @@
       })
       .then(response => response.json())
       .then(data => {
-        document.getElementById('form-container').innerHTML = `
+        // استبدال محتوى الصفحة بالكامل برسالة التأكيد لتكون بعرض الشاشة
+        document.body.innerHTML = `
           <div class="confirmation">
             نشكرك على التواصل مع خدمة <strong>"أسأل محامي"</strong>. تم استلام استفسارك القانوني وسيتم إحالته إلى المحامي الأكثر خبرة في مجال قضيتك.
             <br><br>
