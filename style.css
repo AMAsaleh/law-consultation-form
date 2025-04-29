@@ -1,1 +1,92 @@
+body {
+  margin: 0; /* إزالة الهوامش الافتراضية للجسم */
+  padding: 0; /* إزالة الحشو الافتراضي للجسم */
+  background-color: #efefef;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+  overflow-x: hidden; /* منع ظهور شريط التمرير الأفقي */
+}
+
+.container {
+  max-width: 100%; /* جعل الحاوية تأخذ أقصى عرض ممكن */
+  width: 100%; /* تأكيد أن العرض 100% */
+  margin: 0 auto; /* توسيط الحاوية أفقياً (على الرغم من أن العرض 100% قد لا يكون هذا التأثير مرئياً) */
+  padding: 2rem; /* الحفاظ على بعض الحشو الداخلي */
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  box-sizing: border-box; /* تضمين الحشو والحدود ضمن عرض العنصر وارتفاعه */
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  text-align: right;
+  padding: 0 1rem; /* إضافة بعض الحشو الجانبي للنص */
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  padding: 0 1rem; /* إضافة بعض الحشو الجانبي لمجموعات النماذج */
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+input, textarea, select {
+  width: calc(100% - 2rem); /* لجعل العناصر الداخلية تأخذ 100% مع خصم الحشو الجانبي */
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* تضمين الحشو والحدود */
+}
+
+button {
+  background-color: #1EBE5D;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  margin: 0 1rem; /* إضافة بعض الهوامش الجانبية للزر */
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #159e4b;
+}
+
+.confirmation {
+  background-color: #e6fff0;
+  border: 1px solid #b2dfdb;
+  color: #004d40;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 2rem;
+  margin-left: 1rem; /* إضافة هوامش جانبية */
+  margin-right: 1rem;
+  box-sizing: border-box;
+}
 
