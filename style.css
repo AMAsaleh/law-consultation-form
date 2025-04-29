@@ -8,27 +8,27 @@ body {
 
 .container {
   max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  background-color: #efefef; /* نفس لون خلفية الموقع لدمج طبيعي */
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: none; /* إزالة الظل لدمج تام */
+  background-color: #dff0d8;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 h2 {
-  font-size: 1.25rem;
   color: #333;
   text-align: center;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
 .intro {
   font-size: 1.2rem;
   color: #555;
+  text-align: right;
   margin-bottom: 2rem;
   line-height: 1.8;
-  text-align: right;
-  direction: rtl;
 }
 
 .form-group {
@@ -58,6 +58,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
 button {
@@ -76,4 +77,13 @@ button {
 
 button:hover {
   background-color: #159e4b;
+}
+
+.confirmation-message {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.8;
 }
