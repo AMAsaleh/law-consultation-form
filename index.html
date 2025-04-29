@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>نموذج الاستشارات القانونية</title>
-  <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" rel="stylesheet" />
   <link href="style.css" rel="stylesheet"/>
   <style>
     body {
@@ -84,34 +83,37 @@
     <h2>نموذج الاستشارات</h2>
     <p class="intro">
       مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع
-      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> للمحاماة والاستشارات القانونية.
+      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank" rel="noopener noreferrer">مكتب الأستاذ محمود شرابي</a> للمحاماة والاستشارات القانونية.
       <br>
       <strong>لطلب استشارة؛ يرجى تعبئة البيانات التالية بدقة لنتمكن من مساعدتكم في أقرب وقت ممكن. جميع المعلومات التي تقدمها تعامل بسرية تامة.</strong>
     </p>
-    <form id="consultation-form" method="POST">
+    <form id="consultation-form" method="POST" enctype="multipart/form-data">
       <div class="form-group">
-        <label><i data-lucide="user"></i> الاسم الثلاثي</label>
-        <input type="text" name="الاسم" required />
+        <label for="fullName"><i data-lucide="user"></i> الاسم الثلاثي</label>
+        <input type="text" name="الاسم" id="fullName" required />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="mail"></i> البريد الإلكتروني</label>
-        <input type="email" name="البريد الإلكتروني" required />
+        <label for="email"><i data-lucide="mail"></i> البريد الإلكتروني</label>
+        <input type="email" name="البريد الإلكتروني" id="email" required />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="phone"></i> رقم الموبايل</label>
-        <input type="tel" name="رقم الموبايل" required />
+        <label for="mobile"><i data-lucide="phone"></i> رقم الموبايل</label>
+        <input type="tel" name="رقم الموبايل" id="mobile" required />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="map-pin"></i> المدينة/المنطقة</label>
-        <input type="text" name="المدينة/المنطقة" required />
+        <label for="city"><i data-lucide="map-pin"></i> المدينة/المنطقة</label>
+        <input type="text" name="المدينة/المنطقة" id="city" required />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="folder-search"></i> حدد نوع القضية <a href="https://telegra.ph/lawsap-04-24" target="_blank">[للمساعدة]</a></label>
-        <select name="نوع القضية" required>
+        <label for="caseType">
+          <i data-lucide="folder-search"></i> حدد نوع القضية 
+          <a href="https://telegra.ph/lawsap-04-24" target="_blank" rel="noopener noreferrer">[للمساعدة]</a>
+        </label>
+        <select name="نوع القضية" id="caseType" required>
           <option disabled selected>اختر نوع القضية</option>
           <option>القضايا المدنية والتجارية</option>
           <option>القضايا الجنائية</option>
@@ -126,28 +128,28 @@
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="file-text"></i> عنوان موجز لقضيتك/سؤالك</label>
-        <input type="text" name="عنوان موجز" required />
+        <label for="shortTitle"><i data-lucide="file-text"></i> عنوان موجز لقضيتك/سؤالك</label>
+        <input type="text" name="عنوان موجز" id="shortTitle" required />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="align-left"></i> موضوع الاستشارة</label>
-        <textarea name="موضوع الاستشارة" rows="5" required></textarea>
+        <label for="consultationTopic"><i data-lucide="align-left"></i> موضوع الاستشارة</label>
+        <textarea name="موضوع الاستشارة" id="consultationTopic" rows="5" required></textarea>
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="file-up"></i> مستندات ذات صلة (اختياري)</label>
-        <input type="file" name="مستندات" multiple />
+        <label for="documents"><i data-lucide="file-up"></i> مستندات ذات صلة (اختياري)</label>
+        <input type="file" name="مستندات" id="documents" multiple />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="target"></i> ما النتيجة التي ترغب في تحقيقها؟</label>
-        <input type="text" name="النتيجة المطلوبة" />
+        <label for="desiredResult"><i data-lucide="target"></i> ما النتيجة التي ترغب في تحقيقها؟</label>
+        <input type="text" name="النتيجة المطلوبة" id="desiredResult" />
       </div>
 
       <div class="form-group">
-        <label><i data-lucide="clock"></i> ما هي حالة قضيتك/استشارتك؟</label>
-        <select name="الحالة">
+        <label for="caseStatus"><i data-lucide="clock"></i> ما هي حالة قضيتك/استشارتك؟</label>
+        <select name="الحالة" id="caseStatus">
           <option>طارئة</option>
           <option>عاجلة</option>
           <option>تحتمل الانتظار</option>
