@@ -1,92 +1,84 @@
 body {
-  margin: 0; /* إزالة الهوامش الافتراضية للجسم */
-  padding: 0; /* إزالة الحشو الافتراضي للجسم */
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
   background-color: #efefef;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   direction: rtl;
-  overflow-x: hidden; /* منع ظهور شريط التمرير الأفقي */
 }
 
 .container {
-  max-width: 100%; /* جعل الحاوية تأخذ أقصى عرض ممكن */
-  width: 100%; /* تأكيد أن العرض 100% */
-  margin: 0 auto; /* توسيط الحاوية أفقياً (على الرغم من أن العرض 100% قد لا يكون هذا التأثير مرئياً) */
-  padding: 2rem; /* الحفاظ على بعض الحشو الداخلي */
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
-  box-sizing: border-box; /* تضمين الحشو والحدود ضمن عرض العنصر وارتفاعه */
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
-  color: #333;
-  text-align: center;
   font-size: 1.25rem;
+  color: #222;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .intro {
   font-size: 1.2rem;
-  color: #555;
+  text-align: right;
   margin-bottom: 2rem;
   line-height: 1.8;
-  text-align: right;
-  padding: 0 1rem; /* إضافة بعض الحشو الجانبي للنص */
-  box-sizing: border-box;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: none;
 }
 
 .form-group {
   margin-bottom: 1.5rem;
-  padding: 0 1rem; /* إضافة بعض الحشو الجانبي لمجموعات النماذج */
-  box-sizing: border-box;
 }
 
 label {
   display: block;
-  font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #222;
+  font-weight: 600;
 }
 
-input, textarea, select {
-  width: calc(100% - 2rem); /* لجعل العناصر الداخلية تأخذ 100% مع خصم الحشو الجانبي */
-  padding: 0.7rem 1rem;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 1rem;
-  box-sizing: border-box; /* تضمين الحشو والحدود */
+  background-color: #f8f8f8;
 }
 
 button {
-  background-color: #1EBE5D;
+  background-color: #0d6efd;
   color: #fff;
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   transition: background-color 0.3s ease;
-  margin: 0 1rem; /* إضافة بعض الهوامش الجانبية للزر */
-  box-sizing: border-box;
 }
 
 button:hover {
-  background-color: #159e4b;
+  background-color: #0b5ed7;
 }
 
-.confirmation {
-  background-color: #e6fff0;
-  border: 1px solid #b2dfdb;
-  color: #004d40;
-  padding: 1.5rem;
-  border-radius: 12px;
-  font-size: 1rem;
-  line-height: 1.8;
+.confirmation-message {
   margin-top: 2rem;
-  margin-left: 1rem; /* إضافة هوامش جانبية */
-  margin-right: 1rem;
-  box-sizing: border-box;
+  background-color: #d6f4db;
+  border: 1px solid #b2e2c4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #2a644f;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
-
