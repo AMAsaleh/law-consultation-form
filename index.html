@@ -12,8 +12,7 @@
     <h2>نموذج الاستشارات</h2>
     <p class="intro">
       مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع 
-      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> 
-      للمحاماة والإستشارات القانونية.<br>
+      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> للمحاماة والاستشارات القانونية.<br>
       <strong>لطلب استشارة؛ يرجى تعبئة البيانات التالية بدقة لنتمكن من مساعدتكم في أقرب وقت ممكن. جميع المعلومات التي تقدمها تعامل بسرية تامة.</strong>
     </p>
 
@@ -35,9 +34,7 @@
         <input type="text" name="المدينة/المنطقة" required />
       </div>
       <div class="form-group">
-        <label><i data-lucide="folder-search"></i> حدد نوع القضية 
-          <a href="https://telegra.ph/lawsap-04-24" target="_blank">[للمساعدة]</a>
-        </label>
+        <label><i data-lucide="folder-search"></i> حدد نوع القضية <a href="https://telegra.ph/lawsap-04-24" target="_blank">[للمساعدة]</a></label>
         <select name="نوع القضية" required>
           <option disabled selected>اختر نوع القضية</option>
           <option>القضايا المدنية والتجارية</option>
@@ -99,9 +96,7 @@
       })
       .then(response => {
         form.style.display = "none";
-        const confirmation = document.getElementById("confirmation-message");
-        confirmation.style.display = "block";
-        confirmation.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById("confirmation-message").style.display = "block";
       })
       .catch(error => console.log(error));
     });
