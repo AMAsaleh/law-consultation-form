@@ -3,120 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>نموذج الاستشارات القانونية</title>
+  <title>نموذج الاستشارات</title>
   <link href="style.css" rel="stylesheet"/>
-  <style>
-    body {
-      background-color: #efefef;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      direction: rtl;
-      padding: 0;
-      margin: 0;
-    }
-    .container {
-      max-width: 100%;
-      margin: 0 auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 0 0 16px 16px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #333;
-      text-align: center;
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .intro {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 2rem;
-      line-height: 1.8;
-      text-align: right;
-    }
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    button {
-      background-color: #1EBE5D;
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #159e4b;
-    }
-    /* تعديل نمط رسالة التأكيد لتكون بعرض الشاشة كاملًا */
-    .confirmation {
-      background-color: #e6fff0;
-      border: 1px solid #b2dfdb;
-      color: #004d40;
-      padding: 1.5rem;
-      font-size: 1rem;
-      line-height: 1.8;
-      width: 100vw;
-      margin: 0;
-      border-radius: 0;
-      box-sizing: border-box;
-    }
-  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="container" id="form-container">
+  <div class="container" id="contact-form-section">
     <h2>نموذج الاستشارات</h2>
     <p class="intro">
       مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع
-      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank" rel="noopener noreferrer">مكتب الأستاذ محمود شرابي</a> للمحاماة والاستشارات القانونية.
+      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> للمحاماة والإستشارات القانونية.
       <br>
       <strong>لطلب استشارة؛ يرجى تعبئة البيانات التالية بدقة لنتمكن من مساعدتكم في أقرب وقت ممكن. جميع المعلومات التي تقدمها تعامل بسرية تامة.</strong>
     </p>
-    <form id="consultation-form" method="POST" enctype="multipart/form-data">
-      <div class="form-group">
-        <label for="fullName"><i data-lucide="user"></i> الاسم الثلاثي</label>
-        <input type="text" name="الاسم" id="fullName" required />
-      </div>
 
+    <form action="https://formsubmit.co/ajax/info.mahmoud.sharaby@gmail.com" method="POST" enctype="multipart/form-data" id="law-form">
       <div class="form-group">
-        <label for="email"><i data-lucide="mail"></i> البريد الإلكتروني</label>
-        <input type="email" name="البريد الإلكتروني" id="email" required />
+        <label><i data-lucide="user"></i> الاسم الثلاثي</label>
+        <input type="text" name="الاسم" required />
       </div>
-
       <div class="form-group">
-        <label for="mobile"><i data-lucide="phone"></i> رقم الموبايل</label>
-        <input type="tel" name="رقم الموبايل" id="mobile" required />
+        <label><i data-lucide="mail"></i> البريد الإلكتروني</label>
+        <input type="email" name="البريد الإلكتروني" required />
       </div>
-
       <div class="form-group">
-        <label for="city"><i data-lucide="map-pin"></i> المدينة/المنطقة</label>
-        <input type="text" name="المدينة/المنطقة" id="city" required />
+        <label><i data-lucide="phone"></i> رقم الموبايل</label>
+        <input type="tel" name="رقم الموبايل" required />
       </div>
-
       <div class="form-group">
-        <label for="caseType">
-          <i data-lucide="folder-search"></i> حدد نوع القضية 
-          <a href="https://telegra.ph/lawsap-04-24" target="_blank" rel="noopener noreferrer">[للمساعدة]</a>
-        </label>
-        <select name="نوع القضية" id="caseType" required>
+        <label><i data-lucide="map-pin"></i> المدينة/المنطقة</label>
+        <input type="text" name="المدينة/المنطقة" required />
+      </div>
+      <div class="form-group">
+        <label><i data-lucide="folder-search"></i> حدد نوع القضية <a href="https://telegra.ph/lawsap-04-24" target="_blank">[للمساعدة]</a></label>
+        <select name="نوع القضية" required>
           <option disabled selected>اختر نوع القضية</option>
           <option>القضايا المدنية والتجارية</option>
           <option>القضايا الجنائية</option>
@@ -129,73 +49,60 @@
           <option>استشارات قانونية عامة</option>
         </select>
       </div>
-
       <div class="form-group">
-        <label for="shortTitle"><i data-lucide="file-text"></i> عنوان موجز لقضيتك/سؤالك</label>
-        <input type="text" name="عنوان موجز" id="shortTitle" required />
+        <label><i data-lucide="file-text"></i> عنوان موجز لقضيتك/سؤالك</label>
+        <input type="text" name="عنوان موجز" required />
       </div>
-
       <div class="form-group">
-        <label for="consultationTopic"><i data-lucide="align-left"></i> موضوع الاستشارة</label>
-        <textarea name="موضوع الاستشارة" id="consultationTopic" rows="5" required></textarea>
+        <label><i data-lucide="align-left"></i> موضوع الاستشارة</label>
+        <textarea name="موضوع الاستشارة" rows="5" required></textarea>
       </div>
-
       <div class="form-group">
-        <label for="documents"><i data-lucide="file-up"></i> مستندات ذات صلة (اختياري)</label>
-        <input type="file" name="مستندات" id="documents" multiple />
+        <label><i data-lucide="file-up"></i> مستندات ذات صلة (اختياري)</label>
+        <input type="file" name="مستندات" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
       </div>
-
       <div class="form-group">
-        <label for="desiredResult"><i data-lucide="target"></i> ما النتيجة التي ترغب في تحقيقها؟</label>
-        <input type="text" name="النتيجة المطلوبة" id="desiredResult" />
+        <label><i data-lucide="target"></i> ما النتيجة التي ترغب في تحقيقها؟</label>
+        <input type="text" name="النتيجة المطلوبة" />
       </div>
-
       <div class="form-group">
-        <label for="caseStatus"><i data-lucide="clock"></i> ما هي حالة قضيتك/استشارتك؟</label>
-        <select name="الحالة" id="caseStatus">
+        <label><i data-lucide="clock"></i> ما هي حالة قضيتك/استشارتك؟</label>
+        <select name="الحالة">
           <option>طارئة</option>
           <option>عاجلة</option>
           <option>تحتمل الانتظار</option>
         </select>
       </div>
-
       <button type="submit"><i data-lucide="send"></i> إرسال الاستشارة</button>
     </form>
+
+    <div id="confirmation-message" class="confirmation-message" style="display:none;">
+      نشكرك على التواصل مع خدمة "أسأل محامي". تم استلام استفسارك القانوني وسيتم إحالته إلى المحامي الأكثر خبرة في مجال قضيتك. نبذل قصارى جهدنا للرد في أقرب وقت ممكن، وعادة ما يكون ذلك خلال ٣ أيام عمل للحالات العادية، والرد يكون بنفس اليوم للحالات الطارئة والعاجلة عند التأكد من كونها كذلك.
+      <br><br>
+      يرجى العلم أن هذه الخدمة تقدم استشارات أولية وقد تتطلب تفاصيل إضافية لتقديم إجابة شاملة.
+      <br><br>
+      شكراً لثقتك في مكتب الأستاذ محمود شرابي للمحاماة...
+    </div>
   </div>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
-
-    const form = document.getElementById('consultation-form');
-    form.addEventListener('submit', function(e) {
+    document.getElementById("law-form").addEventListener("submit", function(e) {
       e.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch("https://formsubmit.co/ajax/info.mahmoud.sharaby@gmail.com", {
+      const form = e.target;
+      fetch(form.action, {
         method: "POST",
-        body: formData
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
       })
-      .then(response => response.json())
-      .then(data => {
-        // استبدال محتوى الصفحة بالكامل برسالة التأكيد لتكون بعرض الشاشة
-        document.body.innerHTML = `
-          <div class="confirmation">
-            نشكرك على التواصل مع خدمة <strong>"أسأل محامي"</strong>. تم استلام استفسارك القانوني وسيتم إحالته إلى المحامي الأكثر خبرة في مجال قضيتك.
-            <br><br>
-            نبذل قصارى جهدنا للرد في أقرب وقت ممكن، وعادة ما يكون ذلك خلال <strong>٣ أيام عمل</strong> للحالات العادية، والرد يكون في نفس اليوم للحالات <strong>الطارئة والعاجلة</strong> عند التأكد من كونها كذلك.
-            <br><br>
-            يرجى العلم أن هذه الخدمة تقدم استشارات أولية وقد تتطلب تفاصيل إضافية لتقديم إجابة شاملة.
-            <br><br>
-            شكراً لثقتك في <strong>مكتب الأستاذ محمود شرابي للمحاماة</strong>.
-          </div>
-        `;
+      .then(response => {
+        form.style.display = "none";
+        document.getElementById("confirmation-message").style.display = "block";
+
+        // الانتقال لأعلى الصفحة تلقائيًا بعد الإرسال
+        location.href = "https://sites.google.com/view/mahmoud-sharaby-lawyer/home/contact-us?authuser=0#h.klxr1ibh3kkh";
       })
-      .catch(error => {
-        alert("حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقًا.");
-        console.error(error);
-      });
+      .catch(error => console.log(error));
     });
   </script>
 </body>
