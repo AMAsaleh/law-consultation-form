@@ -6,17 +6,89 @@
   <title>نموذج الاستشارات القانونية</title>
   <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" rel="stylesheet" />
   <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #efefef;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .intro {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      text-align: right;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #1EBE5D;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #159e4b;
+    }
+    .confirmation {
+      background-color: #e6fff0;
+      border: 1px solid #b2dfdb;
+      color: #004d40;
+      padding: 1.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="form-container">
     <h2>نموذج الاستشارات</h2>
     <p class="intro">
-      مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> للمحاماة والإستشارات القانونية.
+      مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع
+      <a href="https://sites.google.com/view/mahmoud-sharaby-lawyer" target="_blank">مكتب الأستاذ محمود شرابي</a> للمحاماة والاستشارات القانونية.
       <br>
       <strong>لطلب استشارة؛ يرجى تعبئة البيانات التالية بدقة لنتمكن من مساعدتكم في أقرب وقت ممكن. جميع المعلومات التي تقدمها تعامل بسرية تامة.</strong>
     </p>
-    <form action="https://formsubmit.co/info.mahmoud.sharaby@gmail.com" method="POST" enctype="multipart/form-data">
-  <input type="hidden" name="_next" value="https://sites.google.com/view/mahmoud-sharaby-lawyer/thank-you">
+    <form id="consultation-form" method="POST">
       <div class="form-group">
         <label><i data-lucide="user"></i> الاسم الثلاثي</label>
         <input type="text" name="الاسم" required />
@@ -65,7 +137,7 @@
 
       <div class="form-group">
         <label><i data-lucide="file-up"></i> مستندات ذات صلة (اختياري)</label>
-        <input type="file" name="مستندات" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple />
+        <input type="file" name="مستندات" multiple />
       </div>
 
       <div class="form-group">
@@ -87,6 +159,38 @@
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    const form = document.getElementById('consultation-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("https://formsubmit.co/ajax/info.mahmoud.sharaby@gmail.com", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('form-container').innerHTML = `
+          <div class="confirmation">
+            نشكرك على التواصل مع خدمة <strong>"أسأل محامي"</strong>. تم استلام استفسارك القانوني وسيتم إحالته إلى المحامي الأكثر خبرة في مجال قضيتك.
+            <br><br>
+            نبذل قصارى جهدنا للرد في أقرب وقت ممكن، وعادة ما يكون ذلك خلال <strong>٣ أيام عمل</strong> للحالات العادية، والرد يكون في نفس اليوم للحالات <strong>الطارئة والعاجلة</strong> عند التأكد من كونها كذلك.
+            <br><br>
+            يرجى العلم أن هذه الخدمة تقدم استشارات أولية وقد تتطلب تفاصيل إضافية لتقديم إجابة شاملة.
+            <br><br>
+            شكراً لثقتك في <strong>مكتب الأستاذ محمود شرابي للمحاماة والاستشارات القانونية</strong>.
+          </div>
+        `;
+      })
+      .catch(error => {
+        alert("حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقًا.");
+        console.error(error);
+      });
+    });
+  </script>
 </body>
 </html>
