@@ -1,84 +1,75 @@
 body {
   margin: 0;
-  font-family: 'Tajawal', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #efefef;
   direction: rtl;
 }
 
 .container {
-  max-width: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  padding: 30px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 0;
+  box-sizing: border-box;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   color: #222;
-  margin-bottom: 1rem;
   text-align: center;
 }
 
 .intro {
   font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #333;
+  line-height: 1.6;
   text-align: right;
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-a {
-  color: #0d6efd;
-  text-decoration: none;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: bold;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
   width: 100%;
-  padding: 0.7rem;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
-  background-color: #f8f8f8;
 }
 
 button {
-  background-color: #0d6efd;
+  background-color: #007B8F;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 20px;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #0b5ed7;
+  background-color: #00697a;
 }
 
 .confirmation-message {
-  margin-top: 2rem;
-  background-color: #d6f4db;
-  border: 1px solid #b2e2c4;
-  padding: 1.5rem;
-  border-radius: 8px;
-  color: #2a644f;
+  background-color: #d4edda;
+  border-right: 6px solid #28a745;
+  color: #155724;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: 1.1rem;
   line-height: 1.8;
-  font-size: 1.05rem;
 }
