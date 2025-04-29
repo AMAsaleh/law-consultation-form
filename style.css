@@ -1,8 +1,3 @@
-/* إعدادات أساسية */
-* {
-  box-sizing: border-box;
-}
-
 body {
   background-color: #efefef;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,32 +6,29 @@ body {
   margin: 0;
 }
 
-/* الحاوية الأساسية */
 .container {
-  max-width: 100%;
-  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
   background: #fff;
-  padding: 2rem 1rem;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* العناوين */
 h2 {
   color: #333;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* الفقرة التمهيدية */
 .intro {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 2rem;
   line-height: 1.8;
+  text-align: center;
 }
 
-/* مجموعات الحقول */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -53,7 +45,6 @@ label i {
   vertical-align: middle;
 }
 
-/* عناصر الإدخال */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -68,7 +59,6 @@ select {
   box-sizing: border-box;
 }
 
-/* زر الإرسال */
 button {
   background-color: #1EBE5D;
   color: #fff;
@@ -81,6 +71,7 @@ button {
   align-items: center;
   gap: 0.5rem;
   transition: background-color 0.3s ease;
+  margin: auto;
 }
 
 button:hover {
