@@ -8,7 +8,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="container" id="contact-form-section">
+  <div class="container">
     <h2>نموذج الاستشارات</h2>
     <p class="intro">
       مرحباً بكم في خدمة "اسأل محامٍ" المقدمة من موقع
@@ -98,9 +98,6 @@
       .then(response => {
         form.style.display = "none";
         document.getElementById("confirmation-message").style.display = "block";
-
-        // الانتقال لأعلى الصفحة تلقائيًا بعد الإرسال
-        location.href = "https://sites.google.com/view/mahmoud-sharaby-lawyer/home/contact-us?authuser=0#h.klxr1ibh3kkh";
       })
       .catch(error => console.log(error));
     });
